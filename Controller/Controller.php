@@ -26,17 +26,14 @@ class Controller{
 
         $db = DatabaseConnexion::getDatatabaseConnect();
         $articleRepo = new ArticleRepository($db);
-        $articles = $articleRepo->find($id, 'Article');
-        include('View/article.phtml');
+        $article = $articleRepo->find($id, 'Article');
+        return include('View/article.phtml');
 
     }
 
      public function errorController()
     {
-
         return ('View/error.phtml');
-
-
     }
 
 

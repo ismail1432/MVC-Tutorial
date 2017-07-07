@@ -11,15 +11,13 @@ error_reporting(E_ALL);
 include ('Controller/Controller.php');
 
 $controller = new Controller();
-
 if(empty($_SERVER['QUERY_STRING']))
 {
    $controller->homeController();
 }
-elseif (isset($_GET['articles']))
+elseif (isset($_GET['article']))
 {
-
-    $controller->articleController($_GET['articles']);
+    $controller->articleController($_GET['article']);
 }
 else{
     $controller->errorController();
