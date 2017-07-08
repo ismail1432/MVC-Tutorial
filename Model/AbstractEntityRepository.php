@@ -11,15 +11,15 @@ class AbstractEntityRepository
 {
     private $db;
 
-    public function __construct(PDO $pdo)
+    public function __construct()
     {
-        $this->db = $pdo;
+        $this->db = DatabaseConnexion::getDatatabaseConnect();
 
     }
 
     public function findAll($table)
     {
-        $req = $this->db->query('SELECT * FROM Article ORDER BY ID ');
+        $req = $this->db->query('SELECT * FROM '. $table.' ORDER BY ID ');
         $datas = $req->fetchAll(PDO::FETCH_CLASS);
 
         return $datas;
@@ -33,4 +33,5 @@ class AbstractEntityRepository
         $datas = $req->fetch();
         return $datas;
     }
+
 }

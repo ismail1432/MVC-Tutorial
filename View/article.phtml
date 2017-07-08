@@ -28,17 +28,17 @@
         <h1 class="right-align ">Article Detail</h1>
     </div>
     <div class="col s12 m7">
-        <h2 class="header">  <?= $article->title ;?></h2>
+        <h2 class="header">  <?= $article->getTitle() ;?></h2>
         <div class="card horizontal">
             <div class="card-image">
                 <img src="https://lorempixel.com/100/190/nature/6">
             </div>
             <div class="card-stacked">
                 <div class="card-content">
-                    <p><?= $article->content ;?></p>
+                    <p><?= $article->getContent() ;?></p>
                 </div>
                 <div class="card-action">
-                   <p>Ecrit le <?=$article->dateCreation ;?> par <?=$article->author ;?> </p>
+                   <p>Ecrit le <?=$article->getDateCreation() ;?> par <?=$article->getAuthor() ;?> </p>
                     <a href="index.php">Retour</a>
                 </div>
             </div>
